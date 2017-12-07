@@ -1,0 +1,24 @@
+<apex:page standardController="Project_Detail__c" sidebar="false">
+    <apex:form >
+    	<apex:pageBlock mode="edit">
+            <h1>
+                Project Detail Page      
+            </h1>
+            <br/>
+            <apex:pageMessages />
+            <apex:pageBlockSection >
+                <apex:inputField value="{!Project_Detail__c.Name}"/>
+                <apex:inputField value="{!Project_Detail__c.Implementation_Type__c}"/>
+                <apex:inputField value="{!Project_Detail__c.Start_Date__c}"/>
+                <apex:inputField value="{!Project_Detail__c.End_Date__c}"/>
+                <apex:inputField value="{!Project_Detail__c.Status__c}"/>
+                <apex:inputField value="{!Project_Detail__c.Client__c}"/>
+                <apex:inputField value="{!Project_Detail__c.Manager__c}"/>
+                <apex:inputField value="{!Project_Detail__c.Manager_Email__c}"/>                
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton value="Save" action="{!save}"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
