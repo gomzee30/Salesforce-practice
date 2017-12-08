@@ -1,8 +1,9 @@
-trigger FirstApexTriggerOnContact on Contact (before insert, after insert) {
+trigger DeleteBeforeNAfter on Contact (after undelete, before delete) {
     if(Trigger.isBefore)
     {
-        if(Trigger.isInsert)
+        if(Trigger.isDelete)
         {
+            System.debug('Before Delete results below');
             System.debug('Trigger.New Debug: ' + Trigger.New);
             System.debug('Trigger.Old Debug: ' + Trigger.Old);
             System.debug('Trigger.NewMap Debug: ' + Trigger.NewMap);
@@ -12,8 +13,9 @@ trigger FirstApexTriggerOnContact on Contact (before insert, after insert) {
     
     if(Trigger.isAfter)
     {
-        if(Trigger.isInsert)
+        if(Trigger.isDelete)
         {
+            System.debug('After Delete results below');
             System.debug('Trigger.New Debug: ' + Trigger.New);
             System.debug('Trigger.Old Debug: ' + Trigger.Old);
             System.debug('Trigger.NewMap Debug: ' + Trigger.NewMap);

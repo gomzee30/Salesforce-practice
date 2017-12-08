@@ -1,8 +1,9 @@
-trigger FirstApexTriggerOnContact on Contact (before insert, after insert) {
+trigger UpdateBeforeNAfter on Contact (after update, before update) {
     if(Trigger.isBefore)
     {
-        if(Trigger.isInsert)
+        if(Trigger.isUpdate)
         {
+            System.debug('Before update results below');
             System.debug('Trigger.New Debug: ' + Trigger.New);
             System.debug('Trigger.Old Debug: ' + Trigger.Old);
             System.debug('Trigger.NewMap Debug: ' + Trigger.NewMap);
@@ -12,8 +13,9 @@ trigger FirstApexTriggerOnContact on Contact (before insert, after insert) {
     
     if(Trigger.isAfter)
     {
-        if(Trigger.isInsert)
+        if(Trigger.isUpdate)
         {
+            System.debug('After update results below');
             System.debug('Trigger.New Debug: ' + Trigger.New);
             System.debug('Trigger.Old Debug: ' + Trigger.Old);
             System.debug('Trigger.NewMap Debug: ' + Trigger.NewMap);
